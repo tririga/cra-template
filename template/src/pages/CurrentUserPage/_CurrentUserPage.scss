@@ -1,0 +1,7 @@
+.currentUserPage {
+  @include page;
+
+  &__details {
+    @include carbon--type-style("body-short-02");
+  }
+}

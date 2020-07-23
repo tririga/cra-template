@@ -1,0 +1,32 @@
+{
+  "name": "@tririga/cra-template",
+  "version": "0.1.1",
+  "keywords": [
+    "react",
+    "create-react-app",
+    "template",
+    "TRIRIGA",
+    "UX",
+    "UX NEXT"
+  ],
+  "main": "template.json",
+  "description": "Quickstart Create React App (CRA) template for building TRIRIGA UX NEXT applications",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tririga/cra-template.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
+  "bugs": {
+    "url": "https://github.com/tririga/cra-template/issues"
+  },
+  "files": [
+    "template",
+    "template.json"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
