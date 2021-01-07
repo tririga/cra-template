@@ -1,4 +1,4 @@
-import TririgaUXNextApp from "./TririgaUXNextApp";
+import TririgaUXWebApp from "./TririgaUXWebApp";
 import * as AppErrorHandlers from "./AppErrorHandlers";
 
-export { TririgaUXNextApp, AppErrorHandlers };
+export { TririgaUXWebApp, AppErrorHandlers };

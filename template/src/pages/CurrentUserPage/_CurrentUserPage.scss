@@ -1,7 +1,9 @@
 .currentUserPage {
   @include page;
 
-  &__details {
+  &_list {
     @include carbon--type-style("body-short-02");
+    margin-bottom: $spacing-04;
+    padding-left: $spacing-04;
   }
 }

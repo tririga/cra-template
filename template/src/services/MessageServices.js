@@ -1,4 +1,11 @@
-import { messageActionTypes, AppMsg } from "../../utils";
+import { AppMsg } from "../utils";
+
+const subscribers = [];
+let message = null;
+
+export function addSubscriber(subscriber) {
+  subscribers.push(subscriber);
+}
 
 function setMessage({
   kind,
@@ -8,33 +15,36 @@ function setMessage({
   caption = "",
   hideCloseButton = false,
 }) {
-  return {
-    type: messageActionTypes.SET_MESSAGE,
-    message: {
-      kind,
-      title,
-      subtitle1,
-      subtitle2,
-      caption,
-      hideCloseButton,
-    },
-  };
+  message =
+    kind != null
+      ? {
+          kind,
+          title,
+          subtitle1,
+          subtitle2,
+          caption,
+          hideCloseButton,
+        }
+      : null;
+  subscribers.forEach((subscriber) => {
+    subscriber(message);
+  });
 }
 
 export function clearMessage() {
-  return {
-    type: messageActionTypes.CLEAR_MESSAGE,
-  };
+  setMessage({
+    kind: null,
+  });
 }
 
 export function showSessionExpiredError() {
-  return setMessage({
+  setMessage({
     kind: "session_expired",
   });
 }
 
 export function showSecurityError() {
-  return setMessage({
+  setMessage({
     kind: "error",
     title: AppMsg.getMessage(AppMsg.ERRORS.SECURITY_ERROR_TITLE),
     subtitle1: AppMsg.getMessage(AppMsg.ERRORS.SECURITY_ERROR_DESCRIPTION),
@@ -43,7 +53,7 @@ export function showSecurityError() {
 }
 
 export function showGeneralError() {
-  return setMessage({
+  setMessage({
     kind: "error",
     title: AppMsg.getMessage(AppMsg.ERRORS.GENERAL_ERROR_TITLE),
     subtitle1: AppMsg.getMessage(AppMsg.ERRORS.GENERAL_ERROR_DESCRIPTION),

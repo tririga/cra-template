@@ -23,12 +23,13 @@ $carbon--theme: $carbon--theme--g10;
 @import "carbon-components/scss/globals/scss/css--body";
 
 //Carbon components styles
+@import "carbon-components/scss/components/list/list";
+@import "carbon-components/scss/components/loading/loading";
 @import "carbon-components/scss/components/modal/modal";
 @import "carbon-components/scss/components/notification/toast-notification";
-@import "carbon-components/scss/components/loading/loading";
 
 //App styles
 @import "./styles/page";
-@import "./app/TririgaUXNextApp";
+@import "./app/TririgaUXWebApp";
 @import "./components/Components";
 @import "./pages/Pages";

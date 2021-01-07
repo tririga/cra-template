@@ -1,44 +1,48 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import { ConnectedRouter } from "connected-react-router";
+import { BrowserRouter } from "react-router-dom";
 import {
   standardTririgaLogin,
   fetchTriAppConfig,
   getAuthCheckerForCurrentApp,
 } from "@tririga/tririga-react-components";
-import { TririgaUXNextApp, AppErrorHandlers } from "./app";
-import { getAppHistory } from "./utils";
+import { TririgaUXWebApp, AppErrorHandlers } from "./app";
 import { createAppModel } from "./model";
-import { getAppStore } from "./store";
+import { UnauthorizedPage } from "./pages";
+import { AppMsg } from "./utils";
 import "./index.scss";
 import * as serviceWorker from "./serviceWorker";
 
 async function initApp() {
-  await fetchTriAppConfig();
+  const appConfig = await fetchTriAppConfig();
   const currentUser = await standardTririgaLogin();
   if (currentUser != null) {
     const authChecker = await getAuthCheckerForCurrentApp();
     if (authChecker.hasMinimumAppPermission()) {
-      createAppModel(AppErrorHandlers.handleModelErrors);
-      renderApp(currentUser);
+      renderApp(currentUser, appConfig);
     } else {
-      // Todo
+      renderUnauthorizedAccess(currentUser);
     }
   }
 }
 
-async function renderApp(currentUser) {
-  const appHistory = getAppHistory();
-  const appStore = getAppStore();
+async function renderUnauthorizedAccess(currentUser) {
   const rootElement = document.getElementById("root");
   rootElement.dir = currentUser.userDirection;
+  await AppMsg.initMessages(currentUser.languageId);
+  ReactDOM.render(<UnauthorizedPage />, rootElement);
+}
+
+async function renderApp(currentUser, appConfig) {
+  const rootElement = document.getElementById("root");
+  rootElement.dir = currentUser.userDirection;
+  createAppModel(AppErrorHandlers.handleModelErrors);
+  await AppMsg.initMessages(currentUser.languageId);
   ReactDOM.render(
-    <Provider store={appStore}>
-      <ConnectedRouter history={appHistory}>
-        <TririgaUXNextApp />
-      </ConnectedRouter>
-    </Provider>,
+    <BrowserRouter basename={appConfig.appPath}>
+      <TririgaUXWebApp />
+    </BrowserRouter>,
     rootElement
   );
   serviceWorker.register();

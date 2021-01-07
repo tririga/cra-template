@@ -1,16 +1,16 @@
 {
   "name": "@tririga/cra-template",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "keywords": [
     "react",
     "create-react-app",
     "template",
     "TRIRIGA",
     "UX",
-    "UX NEXT"
+    "UX Web Applications"
   ],
   "main": "template.json",
-  "description": "Quickstart Create React App (CRA) template for building TRIRIGA UX NEXT applications",
+  "description": "Quickstart Create React App (CRA) template for building TRIRIGA UX Web applications using ReactJS and IBM Carbon Components.",
   "repository": {
     "type": "git",
     "url": "https://github.com/tririga/cra-template.git"

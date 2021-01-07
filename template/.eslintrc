@@ -11,7 +11,10 @@
     "es6": true,
     "browser": true
   },
-  "plugins": ["react", "jest"],
+  "plugins": [
+    "react",
+    "jest"
+  ],
   "parserOptions": {
     "sourceType": "module"
   },
