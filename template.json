@@ -1,6 +1,7 @@
 {
   "package": {
     "dependencies": {
+      "@babel/eslint-parser": "^7.19.1",
       "@carbon/icons-react": "^10.22.0",
       "@carbon/themes": "^10.24.0",
       "@tririga/tririga-react-components": "^1.0.0",

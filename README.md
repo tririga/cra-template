@@ -5,3 +5,7 @@ Quickstart Create React App (CRA) template for building TRIRIGA UX Web applicati
 # Usage
 
 npx create-react-app my-app-name --template @tririga/cra-template --use-npm
+
+**Note**
+
+Currently supported versions of Node 14.
