@@ -4,23 +4,24 @@
     "standard",
     "standard-react",
     "prettier",
-    "prettier/react",
     "plugin:jest/recommended"
   ],
   "env": {
     "es6": true,
     "browser": true
   },
-  "plugins": [
-    "react",
-    "jest"
-  ],
+  "plugins": ["react", "jest"],
   "parserOptions": {
-    "sourceType": "module"
+    "sourceType": "module",
+    "requireConfigFile": false,
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    }
   },
   "rules": {
     // don't force es6 functions to include space before paren
     "space-before-function-paren": 0,
+
     // allow specifying true explicitly for boolean props
     "react/jsx-boolean-value": 0,
     "no-var": "error",

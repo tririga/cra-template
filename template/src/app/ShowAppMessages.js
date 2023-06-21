@@ -1,6 +1,6 @@
 import React from "react";
 import { createPortal } from "react-dom";
-import { ToastNotification, Modal } from "carbon-components-react";
+import { ToastNotification, Modal } from "@carbon/react";
 import PropTypes from "prop-types";
 import { AppMsg } from "../utils";
 

@@ -1,5 +1,5 @@
 import * as DatasourceNames from "./constants/DatasourceNames";
 import * as AppMsg from "./messages/ApplicationMessages";
-import * as Routes from "./constants/Routes";
-export { AppMsg, DatasourceNames, Routes };
+import * as Paths from "./constants/Paths";
+export { AppMsg, DatasourceNames, Paths };
 export * from "./utils.js";

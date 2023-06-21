@@ -1,3 +1,6 @@
+@use "@carbon/react/scss/spacing" as *;
+@use "@carbon/react/scss/type" as *;
+
 .unauthorizedPage {
   padding-left: 10%;
   padding-top: 10%;
@@ -5,17 +8,17 @@
 
   &__header {
     width: 50%;
-    padding-top: $layout-03;
-    @include carbon--type-style("productive-heading-05");
+    padding-top: $spacing-07;
+    @include type-style("heading-05");
   }
 
   &__description {
     width: 50%;
-    padding-top: $layout-02;
-    @include carbon--type-style("body-short-01");
+    padding-top: $spacing-06;
+    @include type-style("body-compact-01");
   }
 
   &__login {
-    margin-top: $layout-02;
+    margin-top: $spacing-06;
   }
 }

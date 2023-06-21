@@ -1,6 +1,6 @@
 import React from "react";
-import { UnorderedList, ListItem } from "carbon-components-react";
-import { Routes, AppMsg } from "../../utils";
+import { UnorderedList, ListItem } from "@carbon/react";
+import { Paths, AppMsg } from "../../utils";
 import { CurrentUserServices } from "../../services";
 import { FooterButtons } from "../../components";
 
@@ -41,7 +41,7 @@ export default class CurrentUserPage extends React.PureComponent {
         <div className={`${cssBase}__content`} />
         <FooterButtons
           secondaryLabel={AppMsg.getMessage(AppMsg.BUTTONS.HOME)}
-          secondaryRoute={Routes.HOME}
+          secondaryRoute={Paths.HOME}
         />
       </div>
     );

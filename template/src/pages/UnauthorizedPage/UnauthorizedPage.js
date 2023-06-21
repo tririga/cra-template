@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "carbon-components-react";
+import { Button } from "@carbon/react";
 import { TriLoginApi } from "@tririga/tririga-react-components";
 import { ReactComponent as NotAuthorized } from "./icons/Not-authorized.svg";
 import { AppMsg } from "../../utils";

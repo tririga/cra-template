@@ -1,10 +1,13 @@
+@use "@carbon/react/scss/type" as *;
+@use "@carbon/react/scss/spacing" as *;
+
 @mixin page {
   display: flex;
   flex-direction: column;
-  padding: $layout-01;
+  padding: $spacing-05;
 
   &__header {
-    @include carbon--type-style("productive-heading-03");
+    @include type-style("heading-03");
     margin-bottom: $spacing-04;
   }
 

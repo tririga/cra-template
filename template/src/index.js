@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import {
   standardTririgaLogin,
@@ -35,15 +35,14 @@ async function renderUnauthorizedAccess(currentUser) {
 }
 
 async function renderApp(currentUser, appConfig) {
-  const rootElement = document.getElementById("root");
+  const rootElement = ReactDOM.createRoot(document.getElementById("root"));
   rootElement.dir = currentUser.userDirection;
   createAppModel(AppErrorHandlers.handleModelErrors);
   await AppMsg.initMessages(currentUser.languageId);
-  ReactDOM.render(
+  rootElement.render(
     <BrowserRouter basename={appConfig.appPath}>
       <TririgaUXWebApp />
-    </BrowserRouter>,
-    rootElement
+    </BrowserRouter>
   );
   serviceWorker.register();
 }

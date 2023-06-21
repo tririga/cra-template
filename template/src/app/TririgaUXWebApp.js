@@ -1,9 +1,9 @@
 import React from "react";
 import { createPortal } from "react-dom";
-import { Route, Switch } from "react-router-dom";
-import { Loading } from "carbon-components-react";
+import { Route, Routes } from "react-router-dom";
+import { Loading } from "@carbon/react";
 import { HomePage, CurrentUserPage } from "../pages";
-import { Routes } from "../utils";
+import { Paths } from "../utils";
 import { LoadingServices, MessageServices } from "../services";
 import ShowAppMessages from "./ShowAppMessages";
 
@@ -24,14 +24,10 @@ export default class TririgaUXWebApp extends React.PureComponent {
     const { loading, message } = this.state;
     return (
       <div className={cssBase}>
-        <Switch>
-          <Route path={Routes.CURRENT_USER}>
-            <CurrentUserPage />
-          </Route>
-          <Route path={Routes.HOME}>
-            <HomePage />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path={Paths.CURRENT_USER} element={<CurrentUserPage />} />
+          <Route path={Paths.HOME} element={<HomePage />} />
+        </Routes>
         <ShowAppMessages message={message} clearMessage={this.clearMessage} />
         {createPortal(<Loading active={loading} withOverlay />, document.body)}
       </div>

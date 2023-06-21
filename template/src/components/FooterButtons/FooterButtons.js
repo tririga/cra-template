@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
-import { Button } from "carbon-components-react";
+import { Button } from "@carbon/react";
 import { Link } from "react-router-dom";
 
 const cssBase = "footerButtons";
@@ -34,7 +34,7 @@ export default class FooterButtons extends React.PureComponent {
           <Button
             className={`${cssBase}__button`}
             kind="secondary"
-            size="small"
+            size="sm"
             as={secondaryRoute != null ? Link : null}
             to={secondaryRoute}
             onClick={onSecondaryClick}
@@ -47,7 +47,7 @@ export default class FooterButtons extends React.PureComponent {
           <Button
             className={`${cssBase}__button`}
             kind="primary"
-            size="small"
+            size="sm"
             as={primaryRoute != null ? Link : null}
             to={primaryRoute}
             onClick={onPrimaryClick}
