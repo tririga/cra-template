@@ -36,8 +36,6 @@
   },
     "homepage": ".",
     "scripts": {
-      "start": "SASS_PATH=\"`cd \"./node_modules/@carbon\";pwd`\" react-scripts start",
-      "build": "SASS_PATH=\"`cd \"./node_modules/@carbon\";pwd`\" react-scripts build",
       "deploy": "env-cmd -x -f ./.env.development.local tri-deploy -t \\$REACT_APP_TRIRIGA_URL -u \\$TRIRIGA_USER -p \\$TRIRIGA_PASSWORD -c -m 3",
       "build:deploy": "npm run build && npm run deploy",
       "lint": "./node_modules/.bin/eslint src",
