@@ -4,6 +4,7 @@
     "standard",
     "standard-react",
     "prettier",
+    "plugin:react/recommended",
     "plugin:jest/recommended"
   ],
   "env": {
