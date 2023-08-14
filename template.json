@@ -15,10 +15,10 @@
       "react-dom": "^18.2.0",
       "react-router-dom": "^6.13.0",
       "react-scripts": "5.0.1",
-      "sass": "^1.62.1",
+      "sass": "1.64.2",
       "web-vitals": "^2.1.4"
-    },  
-   "devDependencies": {
+    },
+    "devDependencies": {
       "@babel/eslint-parser": "^7.21.8",
       "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
       "@babel/preset-react": "^7.22.5",
@@ -33,7 +33,7 @@
       "husky": "^8.0.3",
       "prettier": "^2.8.8",
       "pretty-quick": "^3.1.3"
-  },
+    },
     "homepage": ".",
     "scripts": {
       "deploy": "env-cmd -x -f ./.env.development.local tri-deploy -t \\$REACT_APP_TRIRIGA_URL -u \\$TRIRIGA_USER -p \\$TRIRIGA_PASSWORD -c -m 3",

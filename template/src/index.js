@@ -28,10 +28,10 @@ async function initApp() {
 }
 
 async function renderUnauthorizedAccess(currentUser) {
-  const rootElement = document.getElementById("root");
+  const rootElement = ReactDOM.createRoot(document.getElementById("root"));
   rootElement.dir = currentUser.userDirection;
   await AppMsg.initMessages(currentUser.languageId);
-  ReactDOM.render(<UnauthorizedPage />, rootElement);
+  rootElement.render(<UnauthorizedPage />);
 }
 
 async function renderApp(currentUser, appConfig) {
